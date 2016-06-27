@@ -50,6 +50,14 @@ Whether to create a self-signed certificate for serving GitLab over a secure con
 
 GitLab LDAP configuration; if `gitlab_ldap_enabled` is `true`, the rest of the configuration will tell GitLab how to connect to an LDAP server for centralized authentication.
 
+    gitlab_ldap_active_directory: true
+
+This setting specifies if LDAP server is Active Directory LDAP server.
+
+    gitlab_allow_username_or_email_login: true
+
+If allow_username_or_email_login is enabled, GitLab will ignore everything after the first '@' in the LDAP username submitted by the user on login.
+
 ## Dependencies
 
 None.
