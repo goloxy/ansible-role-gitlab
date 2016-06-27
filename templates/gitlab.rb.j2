@@ -24,7 +24,7 @@ gitlab_rails['ldap_base'] = '{{ gitlab_ldap_base }}'
 {% if gitlab_mattermost_external_url is defined %}
 # GitLab Mattermost
 mattermost_external_url '{{ gitlab_mattermost_external_url }}'
-mattermost['service_address'] = "{{ gitlab_mattermost_service_address | default(127.0.0.1) }}"
+mattermost['service_address'] = "{{ gitlab_mattermost_service_address | default("127.0.0.1") }}"
 mattermost['service_port'] = {{ gitlab_mattermost_service_port | default(8065) }}
 mattermost['gitlab_enable'] = true
 mattermost['gitlab_auth_endpoint'] = "https://{{ gitlab_ldap_host }}/oauth/authorize"
