@@ -50,6 +50,18 @@ Whether to create a self-signed certificate for serving GitLab over a secure con
 
 GitLab LDAP configuration; if `gitlab_ldap_enabled` is `true`, the rest of the configuration will tell GitLab how to connect to an LDAP server for centralized authentication.
 
+### Mattermost
+GitLab Mattermost is disabled by default, to enable it just tell omnibus-gitlab what the external URL for Mattermost server is:
+
+    gitlab_mattermost_external_url: "http://mattermost.example.com"
+
+You can override some parameters. Here are the default values:
+
+    gitlab_mattermost_service_address: "127.0.0.1"
+    gitlab_mattermost_service_port: 8065
+    gitlab_mattermost_nginx_listen_port: 8085
+    gitlab_mattermost_nginx_listen_https: false
+
 ## Dependencies
 
 None.
