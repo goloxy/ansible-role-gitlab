@@ -50,6 +50,14 @@ Whether to create a self-signed certificate for serving GitLab over a secure con
 
 GitLab LDAP configuration; if `gitlab_ldap_enabled` is `true`, the rest of the configuration will tell GitLab how to connect to an LDAP server for centralized authentication.
 
+    # Email configuration.
+    gitlab_email_enabled: false
+    gitlab_email_from: 'gitlab@example.com'
+    gitlab_email_display_name: 'Gitlab'
+    gitlab_email_reply_to: 'gitlab@example.com'
+
+Gitlab system mail configuration. Disabled by default; set `gitlab_email_enabled` to `true` to enable, and make sure you enter valid from/reply-to values.
+
 ### Mattermost
 GitLab Mattermost is disabled by default, to enable it just tell omnibus-gitlab what the external URL for Mattermost server is:
 
