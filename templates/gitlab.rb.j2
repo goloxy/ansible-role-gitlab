@@ -21,5 +21,32 @@ gitlab_rails['ldap_password'] = '{{ gitlab_ldap_password }}'
 gitlab_rails['ldap_allow_username_or_email_login'] = true
 gitlab_rails['ldap_base'] = '{{ gitlab_ldap_base }}'
 
+{% if gitlab_postgresql_enable == "false" %}
+###############################
+# GitLab CI database settings #
+###############################
+# see https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/database.md
+# Only needed if you use an external database.
+
+gitlab_ci['db_adapter'] = '{{ gitlab_db_adapter | default("postgresql") }}'
+gitlab_ci['db_encoding'] = '{{ gitlab_db_encoding | default("unicode") }}'
+gitlab_ci['db_database'] = '{{ gitlab_db_database | default("gitlabhq_production") }}'
+gitlab_ci['db_pool'] = {{ gitlab_db_pool | default(10) }}
+gitlab_ci['db_username'] = '{{ gitlab_db_username | default("gitlab") }}'
+gitlab_ci['db_password'] = '{{ gitlab_db_password | default("nil") }}'
+gitlab_ci['db_host'] = '{{ gitlab_db_host | default("127.0.0.1") }}'
+gitlab_ci['db_port'] = {{ gitlab_db_port | default(5432) }}
+gitlab_ci['db_socket'] = {{ gitlab_db_socket | default("nil") }}
+gitlab_ci['db_sslmode'] = {{ gitlab_db_sslmode | default("nil") }}
+gitlab_ci['db_sslrootcert'] = {{ gitlab_db_sslrootcert | default("nil") }}
+{% endif %}
+
+#####################
+# GitLab PostgreSQL #
+#####################
+
+postgresql['enable'] = {{ gitlab_postgresql_enable }}
+
+
 # To change other settings, see:
 # https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/README.md#changing-gitlab-yml-settings

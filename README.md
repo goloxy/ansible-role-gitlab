@@ -50,6 +50,31 @@ Whether to create a self-signed certificate for serving GitLab over a secure con
 
 GitLab LDAP configuration; if `gitlab_ldap_enabled` is `true`, the rest of the configuration will tell GitLab how to connect to an LDAP server for centralized authentication.
 
+### External Databases
+
+To enable external database, you need to disable the internal postgresql:
+
+    gitlab_postgresql_enable: "false"
+
+#### Postgresql
+By default the external database is a postgresql. The only parameter to set is the password, but you can override any of these below:
+
+    gitlab_db_adapter: "postgresql"
+    gitlab_db_host: "127.0.0.1"
+    gitlab_db_port: 5432
+    gitlab_db_username: "gitlab"
+    gitlab_db_password: "PASSWORD"
+
+#### Mysql
+If you want to use a Mysql, you need to set the adapter, the port and the password, but you can override any of these below:
+
+    gitlab_db_adapter: "mysql2"
+    gitlab_db_host: "127.0.0.1"
+    gitlab_db_port: 3306
+    gitlab_db_username: "gitlab"
+    gitlab_db_password: "PASSWORD"
+
+
 ## Dependencies
 
 None.
