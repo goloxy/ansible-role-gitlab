@@ -78,6 +78,11 @@ If you are running GitLab behind a reverse proxy, you may want to override the l
 
 If you are running GitLab behind a reverse proxy, you may wish to terminate SSL at another proxy server or load balancer
 
+    gitlab_nginx_worker_processes: 4
+    gitlab_nginx_worker_connections: 10240
+
+Gitlab nginx worker settings.
+
 ## Dependencies
 
 None.
