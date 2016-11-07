@@ -70,6 +70,12 @@ How long to keep local backups (useful if you don't want backups to fill up your
 
 Gitlab system mail configuration. Disabled by default; set `gitlab_email_enabled` to `true` to enable, and make sure you enter valid from/reply-to values.
 
+    ## Tweak unicorn settings.
+    gitlab_unicorn_worker_timeout = 60
+    gitlab_unicorn_worker_processes = 2
+
+Gitlab _unicorn worker_ settings.
+
     gitlab_nginx_listen_port: 8080
 
 If you are running GitLab behind a reverse proxy, you may want to override the listen port to something else.
