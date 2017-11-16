@@ -116,6 +116,18 @@ Gitlab nginx worker settings.
 
 If you want to set default theme for all users.
 
+    gitlab_logrotate_enable: "true"
+    gitlab_logrotate_frequency: "daily"
+    gitlab_logrotate_size: ""
+    gitlab_logrotate_rotate: 30
+    gitlab_logrotate_compress: "compress"
+    gitlab_logrotate_method: "copytruncate"
+    gitlab_logrotate_postrotate: ""
+    gitlab_logrotate_dateformat: ""
+
+You can disable the built-in logrotate service if you want (enable by default).
+If you want to set some [Gitlab logrotate settings](https://docs.gitlab.com/omnibus/settings/logs.html#logrotate), you need to specify `gitlab_logrotate_enable: true`.
+
 ## Dependencies
 
 None.
