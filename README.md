@@ -112,6 +112,10 @@ If you want to enable [2-way SSL Client Authentication](https://docs.gitlab.com/
 
 Gitlab nginx worker settings.
 
+    gitlab_default_theme: 2
+
+If you want to set default theme for all users.
+
 ## Dependencies
 
 None.
