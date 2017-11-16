@@ -128,6 +128,15 @@ If you want to set default theme for all users.
 You can disable the built-in logrotate service if you want (enable by default).
 If you want to set some [Gitlab logrotate settings](https://docs.gitlab.com/omnibus/settings/logs.html#logrotate), you need to specify `gitlab_logrotate_enable: true`.
 
+    gitlab_svlogd_size: 200 * 1024 * 1024
+    gitlab_svlogd_num: 30
+    gitlab_svlogd_timeout: 24 * 60 * 60
+    gitlab_svlogd_filter: "gzip"
+    gitlab_svlogd_udp: ""
+    gitlab_svlogd_prefix: ""
+
+You can modify the [runit Logs](https://docs.gitlab.com/omnibus/settings/logs.html#runit-logs) with these svlogd settings.
+
 ## Dependencies
 
 None.
